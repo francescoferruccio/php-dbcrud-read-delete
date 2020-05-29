@@ -32,20 +32,23 @@ function printPaganti(paganti) {
 function deletePagante() {
   var pagante = $(this).parents('.pagante');
   var id = pagante.data('id');
+  var conferma = confirm("Sei sicuro di voler cancellare l'elemento?");
 
-  $.ajax({
-    url: 'deletePagante.php',
-    method: 'POST',
-    data: {
-      id: id
-    },
-    success: function() {
-      pagante.remove();
-    },
-    error: function() {
-      console.error('errore')
-    }
-  });
+  if(conferma) {
+    $.ajax({
+      url: 'deletePagante.php',
+      method: 'POST',
+      data: {
+        id: id
+      },
+      success: function() {
+        pagante.remove();
+      },
+      error: function() {
+        console.error('errore')
+      }
+    });
+  }
 }
 
 function init() {
