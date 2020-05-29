@@ -3,10 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>PHP CRUD</title>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/567ebbfc9c.js" crossorigin="anonymous"></script>
+    <!-- handlebars -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Hello World</h1>
+
+    <div id="container">
+      <h1>Lista paganti</h1>
+
+    </div>
+
+    <!-- template -->
+    <script id="pagante-template" type="text/x-handlebars-template">
+      <div class="pagante" data-id="{{ id }}">
+        <div class="name">
+          <span>{{ name }} {{ lastname }}</span>
+        </div>
+        <div class="address">
+          <span>{{ address }}</span>
+        </div>
+        <div class="delete">
+          <i class="fas fa-trash"></i>
+        </div>
+      </div>
+    </script>
+
   </body>
 </html>
